@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Basic reset */
+        body, h1, p, a {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Container to center content */
+        .container {
+            width: 110%;
+            margin: 0 auto;
+        }
+
+        /* Header Section */
+        header img {
+            width: 1500px; /* Set desired width */
+            height: auto; /* Maintain aspect ratio */
+            max-width: 850%; /* Ensure it doesn't overflow */
+            margin-bottom: 30px;
+        }
+
+        /* Navbar section */
+        nav {
+            text-align: center;
+            background-color: #4957ee;
+            padding: 10px 0;
+        }
+
+        .nav-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 10px; /* Space between rows */
+        }
+
+        .nav-row a {
+            color: rgb(237, 246, 238);
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px; /* Space between options */
+            font-size: 16px;
+        }
+
+        .nav-row a:hover {
+            background-color: #f712be;
+            border-radius: 5px;
+        }
+        /* Small Scrolling Box */
+.scrolling-box-container {
+    width: 50%;
+    margin: 10px auto; /* Center horizontally */
+    padding: 5px;
+    background-color: #eee;
+    border: 1px solid hsl(23, 97%, 48%);
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(223, 87, 87, 0.1);
+}
+.scrolling-box-text {
+    white-space: nowrap;
+    animation: small-scroll 20s linear infinite;
+    font-size: 16px;
+    color: hsl(0, 96%, 28%);
+    font-weight: bold;
+    text-align: center;
+}
+@keyframes small-scroll {
+    0% {transform: translateX(100%);}
+    100% {transform: translateX(-100%);}
+}
+
+        /* Slideshow Section */
+        .slideshow-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .slideshow-images {
+            display: flex;
+            animation: slide 25s linear infinite; /* Slide with smooth transition */
+        }
+
+        .slideshow-images img {
+            width: 100%; /* Each image will take full width of the container */
+            flex-shrink: 0;
+        }
+
+        
+        @keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(0); /* Pause for 25% of the animation duration */
+    }
+    30% {
+        transform: translateX(-100%); /* Quick transition to the second image */
+    }
+    55% {
+        transform: translateX(-100%); /* Pause for 25% of the animation duration */
+    }
+    60% {
+        transform: translateX(-200%); /* Quick transition to the third image */
+    }
+    85% {
+        transform: translateX(-200%); /* Pause for 25% of the animation duration */
+    }
+    90% {
+        transform: translateX(-100%); /* Quick transition back to the first image */
+    }
+    100% {
+        transform: translateX(-20%);
+    }
+        }
+
+        /* Horizontal Line Separator */
+        hr {
+            margin: 30px 0;
+            border: 0;
+            border-top: 3px solid #333; /* Darker line */
+        }
+
+        /* Main content section */
+        .main-content {
+            display: flex;
+            justify-content: center; /* Center-align the content */
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #5449475b;
+            border-radius: 10px;
+        }
+
+        .college-textbox {
+            width: 70%; /* Adjusted width */
+            padding: 20px;
+            background: linear-gradient(145deg, #ffffff, #e6e6e6);
+            border: 2px solid #0e0101;
+            border-radius: 20px;
+            font-size: 19px;
+            height: 300px;
+            overflow: hidden; /* Prevent text overflow */
+            text-overflow: ellipsis;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
+                        -5px -5px 10px rgba(255, 255, 255, 0.7);
+            resize: none; /* Prevent resizing */
+            white-space: pre-wrap; /* Ensure that the text doesn't overflow and wraps properly */
+            line-height: 1.6; /* Improve readability */
+            border-top-left-radius: 30px; /* Rounded corners for shadow effect */
+            border-bottom-right-radius: 30px;
+        }
+        /* Message Box for Scrolling Text */
+.scrolling-message-container {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-top: 10px;
+}
+
+.scrolling-text {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 10%; /* Start the text off-screen */
+    animation: scroll-text 40s linear infinite; /* Increased time for slower scroll */
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+@keyframes scroll-text {
+    0% {
+        transform: translateX(100%); /* Start from the right */
+    }
+    100% {
+        transform: translateX(-100%); /* End at the left */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header Section with Logo -->
+    <header>
+        <img src="logo1.jpg" alt="Rishi MS Institute Logo"> <!-- Replace with actual logo file -->
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-row">
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Academics</a>
+            <a href="#">Admissions</a>
+            <a href="#">Research</a>
+            <a href="#">Support Systems</a>
+            <a href="#">Placements</a>
+            <a href="#">Examination Cell</a>
+            <a href="#">Facilities</a>
+            <a href="#">Statutory Committees</a>
+        </div>
+        <div class="nav-row">
+            <a href="#">Administration</a>
+            <a href="#">Alumni</a>
+            <a href="#">Publications</a>
+            <a href="#">IQAC</a>
+            <a href="#">NAAC</a>
+            <a href="#">Feedback System</a>
+        </div>
+    </nav>
+    <div class="scrolling-box-container">
+        <div class="scrolling-box-text">
+            <a href="https://example.com/admission-form" target="_blank">Students Seeking admission? Fill the form</a>
+        </div>
+    </div>
+    <!-- Image Slideshow Section -->
+    <div class="slideshow-container">
+        <div class="slideshow-images">
+            <img src="tp1.jpg" alt="Slide 1"> <!-- Replace with actual images -->
+            <img src="tp2.jpg" alt="Slide 2">
+            <img src="tp3.jpg" alt="Slide 3">
+        </div>
+    </div>
+ <!-- Scrolling Text Section -->
+ <div class="scrolling-message-container">
+    <div class="scrolling-text">
+        Our beloved secretary ma’am is honored with the Lifetime Achievement Award by Bharath Education Excellence Awards.
+    </div>
+</div>
+<!-- Main Content Section -->
+    <div class="container">
+        <div class="main-content">
+            <!-- College Information Section -->
+            <textarea class="college-textbox" readonly>
+Rishi MS Institute of Engineering & Technology for women was established in 2009 to perpetuate the memory of “BHARAT RATNA”. Smt. M.S. Subbulakshmiji to emulate moral values and quality parameters in Technical Education. Rishi MS Engineering College is located near JNTUH metro station, KUKATPALLY, HYDERABAD.
+
+The college has a strong TRAINING & PLACEMENT CELL, with continuous activities to ensure best Technical and Soft skills to students for industry readiness. The students from all the branches are participating in INTERNSHIPS, HACKATHON, WORKSHOPS, and skill development workshops in updated Technologies from time to time. The college had MOU with CISCO and TASK is the best platform for updating skills with multi-level technical training programs. Placement cell has achieved 100% placements for IV year students in reputed companies.
+            </textarea>
+
+        </div>
+    </div>
+<!-- Achievements Section -->
+<div class="content-container" style="display: flex; align-items: stretch; margin: 20px; gap: 20px; border-radius: 10px; box-shadow: 5px 5px 10px rgba(0,0,0,0.2); background-color: #f9f9f9; padding: 20px;font-family: 'Arial', sans-serif; font-size: 18px; line-height: 1.6;">
+    <!-- Image -->
+    <img src="acheive.jpeg" alt="Achievements Image" style="width: 50%; height: auto; border-radius: 10px; object-fit: cover;">
+
+    <!-- Text Content -->
+    <div class="content-text" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+        <p>
+            Rishi MS is happy to share the tremendous accomplishment of our students in terms of Internship selections 2022.
+            In the Internshala Annual Ranking for student Internship selections in India, Rishi MS has been the Telangana
+            topper and South Zone 2nd topper for three consecutive years, including 2022.
+        </p>
+        <ul>
+            <li><strong>All India Rank:</strong> 5, 4, 5</li>
+            <li><strong>South Zone Rank:</strong> 2, 2, 2</li>
+            <li><strong>Telangana Rank:</strong> 1, 1, 1</li>
+        </ul>
+        <p>
+            Recognition for college, students, and mentors has always been a breathtaking experience. 
+            Thank you, Internshala Team, for creating these moments and Telangana Academy for Skill 
+            and Knowledge for introducing Internshala to Rishi MS, which is AICTE recommended. 
+            Internshala helped Rishi MS in building a meaningful internship culture, and we shall 
+            continue the same. Congratulations to Rishi MS students; we are proud of your achievement.
+        </p>
+    </div>
+</div>
+     <!-- Initial Images -->
+    <div style="display: flex; gap: 20px; justify-content: center; margin-top: 20px;">
+        <img src="tp1.jpg" alt="Gallery Image 1" style="width: 45%; height: auto; border-radius: 10px; box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);">
+        <img src="sp2.jpg" alt="Gallery Image 2" style="width: 45%; height: auto; border-radius: 10px; box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);">
+    </div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishi MS Institute</title>
+    <style>
+        /* Include your CSS from the previous code */
+        body, h1, p, a {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 110%;
+            margin: 0 auto;
+        }
+
+        nav {
+            text-align: center;
+            background-color: #4957ee;
+            padding: 10px 0;
+        }
+
+        .nav-row a {
+            color: rgb(237, 246, 238);
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+        .nav-row a:hover {
+            background-color: #f712be;
+            border-radius: 5px;
+        }
+
+        .animated-button {
+            position: relative;
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(90deg, #FF5733, #FF8D1A, #FFC300, #28B463, #007BFF, #8E44AD);
+            background-size: 300%;
+            cursor: pointer;
+            transition: 0.5s ease-in-out;
+            animation: gradient-move 3s linear infinite;
+        }
+
+        .animated-button:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes gradient-move {
+            0% { background-position: 0%; }
+            100% { background-position: 100%; }
+        }
+
+        /* Gallery modal styles */
+        #galleryModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        #folders {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .folder {
+            display: none;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .folder img, .folder video {
+            width: 200px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .folder video {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Show Gallery Button -->
+    <div style="text-align: center; margin-top: 20px;">
+        <button onclick="openGallery()" class="animated-button">
+            Show Gallery
+        </button>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal">
+        <span onclick="closeGallery()" style="position: absolute; top: 20px; right: 30px; font-size: 30px; color: white; cursor: pointer;">&times;</span>
+        
+        <!-- Gallery Folders -->
+        <div id="folders">
+            <button onclick="showFolder('nss')" style="padding: 10px 20px; background-color: #007BFF; color: white; border-radius: 5px; cursor: pointer;">NSS</button>
+            <button onclick="showFolder('sports')" style="padding: 10px 20px; background-color: #007BFF; color: white; border-radius: 5px; cursor: pointer;">Sports</button>
+            <button onclick="showFolder('tpCell')" style="padding: 10px 20px; background-color: #007BFF; color: white; border-radius: 5px; cursor: pointer;">TP Cell</button>
+        </div>
+
+        <!-- NSS Folder Contents -->
+        <div id="nss" class="folder">
+            <img src="d1.jpg" alt="NSS 1">
+            <img src="sp2.jpg" alt="NSS 2">
+        </div>
+
+        <!-- Sports Folder Contents -->
+        <div id="sports" class="folder">
+            <img src="sp3.jpg" alt="Sports 1">
+            <img src="sp4.jpg" alt="Sports 2">
+            <video controls>
+                <source src="d2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- TP Cell Folder Contents -->
+        <div id="tpCell" class="folder">
+            <img src="ac1.jpg" alt="TP Cell 1">
+            <img src="tp3.jpg" alt="TP Cell 2">
+        </div>
+    </div>
+
+    <!-- JavaScript for Gallery Functionality -->
+    <script>
+        function openGallery() {
+            document.getElementById('galleryModal').style.display = 'block';
+        }
+
+        function closeGallery() {
+            document.getElementById('galleryModal').style.display = 'none';
+        }
+
+        function showFolder(folderId) {
+            // Hide all folders
+            const folders = document.querySelectorAll('.folder');
+            folders.forEach(folder => folder.style.display = 'none');
+            
+            // Show the selected folder
+            const selectedFolder = document.getElementById(folderId);
+            if (selectedFolder) {
+                selectedFolder.style.display = 'flex';
+            }
+        }
+    </script>
+    
+<!-- Modal for Zooming Image -->
+<div id="imageModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); justify-content: center; align-items: center; z-index: 1000;">
+    <span onclick="closeModal()" style="position: absolute; top: 20px; right: 30px; font-size: 30px; color: white; cursor: pointer;">&times;</span>
+    <img id="modalImage" src="" alt="Zoomed Image" style="max-width: 90%; max-height: 90%; border-radius: 10px;">
+</div>
+
+<!-- CSS for Animated Colorful Button -->
+<style>
+    .animated-button {
+        position: relative;
+        display: inline-block;
+        padding: 15px 30px;
+        font-size: 18px;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        background: linear-gradient(90deg, #FF5733, #FF8D1A, #FFC300, #28B463, #007BFF, #8E44AD);
+        background-size: 300%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        overflow: hidden;
+        transition: 0.5s ease-in-out;
+        animation: gradient-move 3s linear infinite;
+    }
+
+    .animated-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    @keyframes gradient-move {
+        0% {
+            background-position: 0%;
+        }
+        100% {
+            background-position: 100%;
+        }
+    }
+</style>
+<!-- Recognition Section -->
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 40px; padding: 17px; border: 3px solid #333; border-radius: 10px; background-color: #f9f9f9; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); font-family: 'Arial', sans-serif; font-size: 23px; line-height: 1.6;">
+
+    <!-- Text and Image Section -->
+    <div style="display: flex; gap: 20px; align-items: center; width: 100%;">
+        <!-- Text Section -->
+        <div style="flex: 1; padding: 20px;">
+            <h3 style="color: #007BFF; margin-bottom: 10px;">Student Achievements</h3>
+            <p>
+                Rishi MS is happy to share recognition certificates received by students
+                for completing virtual internship in programming.
+            </p>
+            <p>
+                Our 51 students from 4th year received certificates for the Cisco – AICTE
+                virtual internship programme 2022.
+            </p>
+            <p>
+                Rishi MS MOU with various skilling organisations such as Coign, TASK,
+                Cisco, Oracle builds strong Technical skills in students and enables them to achieve internships and jobs in MNCs.
+            </p>
+            <p>
+                Rishi MS congratulates all 52 students for their effort in completing
+                programming internships with Cisco.
+            </p>
+        </div>
+
+        <!-- Image Section -->
+        <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+            <img src="tp4.jpg" alt="Recognition Certificates" style="width: 130%; height: auto; max-width: 700px; border-radius: 10px; box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);">
+        </div>
+    </div>
+</div>
+<!-- Horizontal Line -->
+<hr style="border: 1px solid #ddd; margin: 40px 0;">
+
+<!-- Testimonials Section -->
+<div style="background-color: #4957ee; padding: 50px 0;">
+    <h2 style="color: white; text-align: center; font-size: 28px; margin-bottom: 20px;">Testimonials</h2>
+    <div id="testimonial-slider" style="max-width: 600px; margin: 0 auto; position: relative; background-color: white; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); padding: 20px; overflow: hidden;">
+        <div id="slides" style="display: flex; transition: transform 1.5s ease-in-out;">
+            <!-- Slide 1 -->
+            <div style="min-width: 100%; box-sizing: border-box; padding: 20px; text-align: center;">
+                <p style="font-size: 16px; color: #ffb400; margin-bottom: 10px;">⭐⭐⭐⭐⭐</p>
+                <p style="font-size: 16px; font-weight: bold; margin-bottom: 10px;">Gayathry Shree Mayukha - 3rd CSE</p>
+                <p style="font-size: 14px; line-height: 1.6; color: #333;">
+                    Ready to help, and not only delivering classroom teachings, but they are also the pillars of the learning gained from this esteemed college and this is a treasure for life. I am thankful to Training & Placement cell for providing a platform to enhance my skills and an opportunity to showcase them.
+                </p>
+            </div>
+            <!-- Slide 2 -->
+            <div style="min-width: 100%; box-sizing: border-box; padding: 20px; text-align: center;">
+                <p style="font-size: 16px; color: #ffb400; margin-bottom: 10px;">⭐⭐⭐⭐⭐</p>
+                <p style="font-size: 16px; font-weight: bold; margin-bottom: 10px;">Phani Sharvani - 3rd IT</p>
+                <p style="font-size: 14px; line-height: 1.6; color: #333;">
+                    My experience at Rishi MS Institution has been very wonderful. Rishi helps in exploring your skills and drives students towards career growth by many workshops, hackathons, and Cisco trainings. Here we have theoretical as well as practical-based learning. Students are motivated and encouraged to pursue internships from the First Year to bring hands-on industry experience.
+                </p>
+            </div>
+            <!-- Slide 3 -->
+            <div style="min-width: 100%; box-sizing: border-box; padding: 20px; text-align: center;">
+                <p style="font-size: 16px; color: #ffb400; margin-bottom: 10px;">⭐⭐⭐⭐⭐</p>
+                <p style="font-size: 16px; font-weight: bold; margin-bottom: 10px;">Bharathula Venkata Supriya - Assistant System Engineer-Trainee</p>
+                <p style="font-size: 14px; line-height: 1.6; color: #333;">
+                    Every step of the recruitment process is important, from the written test to the interview. Aptitude, coding, and communication skills are crucial. If there are any setbacks, make them the stepping stones and move forward by learning from the mistakes to become successful ultimately.
+                </p>
+            </div>
+            <!-- Slide 4 -->
+            <div style="min-width: 100%; box-sizing: border-box; padding: 20px; text-align: center;">
+                <p style="font-size: 16px; color: #ffb400; margin-bottom: 10px;">⭐⭐⭐⭐⭐</p>
+                <p style="font-size: 16px; font-weight: bold; margin-bottom: 10px;">Vaishali Kaletle - Project Engineer</p>
+                <p style="font-size: 14px; line-height: 1.6; color: #333;">
+                    I am very thankful to each and every faculty member for their continuous guidance and support. My academic experience and training sessions were excellent. The TP cell provided many training sessions that helped me improve both technical and soft skills.
+                </p>
+            </div>
+            <!-- Slide 5 -->
+            <div style="min-width: 100%; box-sizing: border-box; padding: 20px; text-align: center;">
+                <p style="font-size: 16px; color: #ffb400; margin-bottom: 10px;">⭐⭐⭐⭐⭐</p>
+                <p style="font-size: 16px; font-weight: bold; margin-bottom: 10px;">Priyanka Dantuluri</p>
+                <p style="font-size: 14px; line-height: 1.6; color: #333;">
+                    It was a wonderful experience which helped me gain knowledge, self-confidence, and the zeal to never stop working in order to achieve my dreams.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for Slider -->
+<script>
+    let currentIndex = 0;
+    const slides = document.getElementById('slides');
+    const slideCount = slides.children.length;
+
+    function showNextSlide() {
+        currentIndex = (currentIndex + 1) % slideCount;
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    // Automatically switch slides every 8 seconds
+    setInterval(showNextSlide, 8000);
+</script>
+<!-- White Space -->
+<div style="height: 50px; background-color: white;"></div>
+<!-- Quick Links Section -->
+<div style="background-color: #001f3f; padding: 40px; color: white;">
+    <h2 style="color: yellow; text-align: center; font-size: 28px; margin-bottom: 20px;">Quick Links</h2>
+    <div style="display: flex; justify-content: space-around; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; gap: 20px;">
+
+        <!-- Column 1 -->
+        <div style="flex: 1; min-width: 250px;">
+            <h3 style="color: yellow; font-size: 20px; border-bottom: 1px solid yellow; padding-bottom: 5px; margin-bottom: 10px;">Quick Links</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="#" style="color: white; text-decoration: none;" onmouseover="this.style.color='#00aaff';" onmouseout="this.style.color='white';">Home</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;" onmouseover="this.style.color='#00aaff';" onmouseout="this.style.color='white';">About Us</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;" onmouseover="this.style.color='#00aaff';" onmouseout="this.style.color='white';">Administration</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;" onmouseover="this.style.color='#00aaff';" onmouseout="this.style.color='white';">Academics</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;" onmouseover="this.style.color='#00aaff';" onmouseout="this.style.color='white';">Research</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;" onmouseover="this.style.color='#00aaff';" onmouseout="this.style.color='white';">Support System</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;" onmouseover="this.style.color='#00aaff';" onmouseout="this.style.color='white';">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 2 -->
+        <div style="flex: 1; min-width: 250px;">
+            <h3 style="color: yellow; font-size: 20px; border-bottom: 1px solid yellow; padding-bottom: 5px; margin-bottom: 10px;">Placements</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="#" style="color: white; text-decoration: none;" onmouseover="this.style.color='#00aaff';" onmouseout="this.style.color='white';">Placements</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;" onmouseover="this.style.color='#00aaff';" onmouseout="this.style.color='white';">Alumni</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;" onmouseover="this.style.color='#00aaff';" onmouseout="this.style.color='white';">Publications</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;" onmouseover="this.style.color='#00aaff';" onmouseout="this.style.color='white';">NIRF</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;" onmouseover="this.style.color='#00aaff';" onmouseout="this.style.color='white';">IQAC</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;" onmouseover="this.style.color='#00aaff';" onmouseout="this.style.color='white';">Gallery</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div style="flex: 1; min-width: 250px;">
+            <h3 style="color: yellow; font-size: 20px; border-bottom: 1px solid yellow; padding-bottom: 5px; margin-bottom: 10px;">Events</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="#" style="color: white; text-decoration: none;" onmouseover="this.style.color='#00aaff';" onmouseout="this.style.color='white';">Sports</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;" onmouseover="this.style.color='#00aaff';" onmouseout="this.style.color='white';">Cultural Programs</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;" onmouseover="this.style.color='#00aaff';" onmouseout="this.style.color='white';">NSS</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 4 -->
+        <div style="flex: 1; min-width: 250px;">
+            <h3 style="color: yellow; font-size: 20px; border-bottom: 1px solid yellow; padding-bottom: 5px; margin-bottom: 10px;">Student Corner</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="#" style="color: white; text-decoration: none;" onmouseover="this.style.color='#00aaff';" onmouseout="this.style.color='white';">Grievances</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;" onmouseover="this.style.color='#00aaff';" onmouseout="this.style.color='white';">Medical Dispensary</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;" onmouseover="this.style.color='#00aaff';" onmouseout="this.style.color='white';">Campus Life</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;" onmouseover="this.style.color='#00aaff';" onmouseout="this.style.color='white';">Anti Ragging</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;" onmouseover="this.style.color='#00aaff';" onmouseout="this.style.color='white';">NSS Coordinators</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;" onmouseover="this.style.color='#00aaff';" onmouseout="this.style.color='white';">EDC</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html><!-- Chatbot CSS -->
+<style>
+    /* Chatbot Icon Style */
+    #chatbot-icon {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background-color: black;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #chatbot-icon img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Chatbot Container */
+    #chatbot-container {
+        position: fixed;
+        bottom: 90px;
+        right: 20px;
+        width: 300px;
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        display: none;
+        flex-direction: column;
+        z-index: 1000;
+    }
+
+    #chatbot-header {
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        padding: 10px;
+        background-color: #4b0082;
+        border-radius: 10px 10px 0 0;
+    }
+
+    #chatbot-messages {
+        padding: 10px;
+        max-height: 200px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .user-message,
+    .bot-message {
+        border-radius: 10px;
+        padding: 10px;
+        max-width: 80%;
+        font-size: 14px;
+    }
+
+    .user-message {
+        align-self: flex-end;
+        background-color: #ffffff;
+        color: #2575fc;
+    }
+
+    .bot-message {
+        align-self: flex-start;
+        background-color: #ffffffaa;
+        color: #000000;
+    }
+
+    #chatbot-options {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .chatbot-button {
+        background-color: white;
+        color: #2575fc;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        text-align: center;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .chatbot-button:hover {
+        background-color: #eef6ff;
+    }
+
+    /* Chat Input Box */
+    #chatbot-input-container {
+        display: flex;
+        padding: 10px;
+        gap: 10px;
+        border-top: 1px solid #ddd;
+    }
+
+    #chatbot-input {
+        flex-grow: 1;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        font-size: 14px;
+    }
+
+    #chatbot-send {
+        padding: 10px 15px;
+        background-color: #ffffff;
+        color: #2575fc;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    #chatbot-send:hover {
+        background-color: #eef6ff;
+    }
+</style>
+
+<!-- Chatbot HTML -->
+<div id="chatbot-icon">
+    <img src="icon.png" alt="Chatbot Icon">
+</div>
+
+<div id="chatbot-container">
+    <div id="chatbot-header">Hi friends, welcome to Study Buddy!</div>
+    <div id="chatbot-messages">
+        <div class="bot-message">Select a regulation to start:</div>
+    </div>
+    <div id="chatbot-options" class="chatbot-buttons">
+        <button class="chatbot-button" onclick="showBranches('R18')">R18 Regulation</button>
+        <button class="chatbot-button" onclick="showBranches('R22')">R22 Regulation</button>
+    </div>
+    <div id="chatbot-input-container">
+        <input type="text" id="chatbot-input" placeholder="Type your query here..." />
+        <button id="chatbot-send">Send</button>
+    </div>
+</div>
+
+<!-- Chatbot JavaScript -->
+<script>
+    // Toggle Chatbot Visibility
+    document.getElementById("chatbot-icon").addEventListener("click", function () {
+        const chatbot = document.getElementById("chatbot-container");
+        chatbot.style.display = "flex";
+    });
+
+    // Close Chatbot When Clicking Outside
+    document.addEventListener("click", function (event) {
+        const chatbot = document.getElementById("chatbot-container");
+        const chatbotIcon = document.getElementById("chatbot-icon");
+        if (!chatbot.contains(event.target) && !chatbotIcon.contains(event.target)) {
+            chatbot.style.display = "none";
+        }
+    });
+
+    // Prevent Closing Chatbot When Clicking Inside
+    document.getElementById("chatbot-container").addEventListener("click", function (event) {
+        event.stopPropagation();
+    });
+
+    // Show Branches
+    function showBranches(regulation) {
+        const chatbotMessages = document.getElementById("chatbot-messages");
+        chatbotMessages.innerHTML += `<div class="user-message">${regulation} Regulation</div>`;
+        const branches = ['CSE', 'ECE', 'IT'];
+        const chatbotOptions = document.getElementById("chatbot-options");
+
+        chatbotOptions.innerHTML = branches
+            .map(branch => `<button class="chatbot-button" onclick="showYears('${regulation}', '${branch}')">${branch}</button>`)
+            .join("");
+    }
+
+    // Show Years
+    function showYears(regulation, branch) {
+        const chatbotMessages = document.getElementById("chatbot-messages");
+        chatbotMessages.innerHTML += `<div class="user-message">${branch}</div>`;
+        const chatbotOptions = document.getElementById("chatbot-options");
+
+        chatbotOptions.innerHTML = Array.from({ length: 4 }, (_, i) => `<button class="chatbot-button" onclick="showSemesters('${regulation}', '${branch}', ${i + 1})">Year ${i + 1}</button>`).concat('<button class="chatbot-button" onclick="goBack()">Back</button>').join("");
+    }
+
+    // Show Semesters
+    function showSemesters(regulation, branch, year) {
+        const chatbotMessages = document.getElementById("chatbot-messages");
+        chatbotMessages.innerHTML += `<div class="user-message">Year ${year}</div>`;
+        const chatbotOptions = document.getElementById("chatbot-options");
+
+        chatbotOptions.innerHTML = `
+            <button class="chatbot-button" onclick="addMessage('${regulation} - ${branch} - Year ${year} - Semester 1')">Semester 1</button>
+            <button class="chatbot-button" onclick="addMessage('${regulation} - ${branch} - Year ${year} - Semester 2')">Semester 2</button>
+            <button class="chatbot-button" onclick="goBack()">Back</button>
+        `;
+    }
+
+    // Add Message to Chat
+    function addMessage(message) {
+        const chatbotMessages = document.getElementById("chatbot-messages");
+        chatbotMessages.innerHTML += `<div class="bot-message">${message}</div>`;
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    // Handle User Input
+    document.getElementById("chatbot-send").addEventListener("click", function () {
+        const userInput = document.getElementById("chatbot-input").value.trim();
+        if (userInput) {
+            const chatbotMessages = document.getElementById("chatbot-messages");
+            chatbotMessages.innerHTML += `<div class="user-message">${userInput}</div>`;
+            document.getElementById("chatbot-input").value = "";
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+    });
+
+    // Go Back Option
+    function goBack() {
+        const chatbotMessages = document.getElementById("chatbot-messages");
+        chatbotMessages.innerHTML = chatbotMessages.innerHTML.replace(/<div class="user-message">(.*)<\/div>/, '');
+        const chatbotOptions = document.getElementById("chatbot-options");
+        chatbotOptions.innerHTML = '';
+        const previousMessages = chatbotMessages.getElementsByClassName("user-message");
+        if (previousMessages.length > 0) {
+            const previousMessage = previousMessages[previousMessages.length - 1].innerText.split(' ')[0]; // Get the last regulation, branch, year, or semester
+            if (previousMessage === 'R18' || previousMessage === 'R22') {
+                showBranches(previousMessage);
+            } else if (previousMessage.match(/Year \d+/)) {
+                const [_, year] = previousMessage.split(' ');
+                const regulation = previousMessages[previousMessages.length - 2].innerText.split(' ')[0]; // Get the previous regulation
+                const branch = previousMessages[previousMessages.length - 3].innerText;
+                showYears(regulation, branch, year);
+            }
+        } else {
+            showBranches('R18'); // Default to R18
+        }
+    }
+</script>
